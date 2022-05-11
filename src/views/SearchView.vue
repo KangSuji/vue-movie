@@ -30,37 +30,40 @@
   </div>
 </template>
 <script>
-import { fetch } from '../api/index.js';
 
 export default {
   data() {
     return {
-      title: '',
-      movies: [],
+      title: ''
+    }
+  },
+  computed: {
+    movies() {
+      return this.$store.state.movies;
     }
   },
   created() {
-    if(this.$attrs.title){
-      for(let page = 1; page<=3; page ++){
-        fetch(this.$attrs.title,page)
-        .then( res => {
-          const {Search} = res.data;
-          this.movies.push(...Search) 
-          })
-        .catch( error => console.log(error))
+    const payload = {
+      page: 1,
+      title: this.$attrs.title
+    }
+    this.$store.state.movies = [];
+    if(payload.title){
+      for(payload.page = 1; payload.page<=3; payload.page ++){
+        this.$store.dispatch('FETCH_MOVIE_TITLE', payload);
+        
       }
     }
   },
   methods: {
     submitClick() {
-      this.movies = [];
-      for(let page = 1; page<=3; page ++){
-       fetch(this.title,page)
-        .then( res => {
-          const {Search} = res.data;
-          this.movies.push(...Search) 
-        })
-        .catch( error => console.log(error))
+      const payload = {
+        page: 1,
+        title: this.title
+      }
+      this.$store.state.movies = [];
+      for(payload.page = 1; payload.page<=3; payload.page ++){
+        this.$store.dispatch('FETCH_MOVIE_TITLE', payload);
       }
     }
   }

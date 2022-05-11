@@ -4,12 +4,12 @@
       <img :src="sizingPoster"/>
     </div>
     <div class="movie-info">
-      <div class="movie-title margins-50">{{this.movie.Title}}</div>
+      <div class="movie-title margins-50">{{movie.Title}}</div>
       <div class="margins-50 info-text">
-        <span>{{this.movie.Released}} | </span>
-        <span>{{this.movie.Runtime}}</span>
+        <span>{{movie.Released}} | </span>
+        <span>{{movie.Runtime}}</span>
       </div>
-      <div class="margins-50 info-text">{{this.movie.Plot}}</div>
+      <div class="margins-50 info-text">{{movie.Plot}}</div>
       <div class="info-head">Ratings</div>
       <div class="ratings-wrap">
         <div class="ratings margins-50" v-for="{ Source: name, Value: score } in movie.Ratings" :key="name">
@@ -20,45 +20,34 @@
         </div>
       </div>
       <div class="info-head">Director</div>
-      <div class="margins-50 info-text">{{this.movie.Director}}</div>
+      <div class="margins-50 info-text">{{movie.Director}}</div>
       <div class="info-head">Actors</div>
-      <div class="margins-50 info-text">{{this.movie.Actors}}</div>
+      <div class="margins-50 info-text">{{movie.Actors}}</div>
     </div>
     
   </div>
 </template>
 
 <script>
-import { fetchMovie } from '../api/index.js';
-
 export default {
-  data() {
-    return {
-      movie:{}
-    }
-  },
   computed: {
     sizingPoster() {
-      let poster = String(this.movie.Poster);
+      let poster = String(this.$store.state.movie.Poster);
       poster = poster.replace('SX300', 'SX700');
       return poster;
+    },
+    movie(){
+      return this.$store.state.movie;
     }
   },
   created() {
     if(this.$route.params){
       const id =this.$route.params.id;
-      fetchMovie(id)
-      .then(res => {
-        this.movie = res.data;
-      })
-      .catch(error => console.log(error))
+      this.$store.dispatch('FETCH_MOVIE', id)
     }else{
       const id = 'tt1340800'
-      fetchMovie(id)
-      .then(res => {
-        this.movie = res.data;
-      })
-      .catch(error => console.log(error))
+      this.$store.dispatch('FETCH_MOVIE', id)
+      console.log(this.$store.state.movie)
     }
     
   }
