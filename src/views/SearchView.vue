@@ -12,7 +12,7 @@
     <div class="search-poster">
       <div class="movie-poster">
         <router-link 
-          :to="`/vue-movie/movie/${item.imdbID}`"
+          :to="`movie/${item.imdbID}`"
           v-for="(item,i) in movies" 
           :key="i" class="movie-poster-img">
            <div>

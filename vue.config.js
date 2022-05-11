@@ -1,3 +1,3 @@
-module.exports = {
-  publicPath: '/vue-movie/'
-}
+// module.exports = {
+//   publicPath: '/vue-movie/'
+// }
