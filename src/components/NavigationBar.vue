@@ -2,9 +2,9 @@
   <div class="nav-section">
     <nav>
       <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link :to="`/movie/${this.id}`">Movie</router-link></li>
-        <li><router-link to="/search">Search</router-link></li>
+        <li><router-link to="/vue-movie/">Home</router-link></li>
+        <li><router-link :to="`/vue-movie/movie/${this.id}`">Movie</router-link></li>
+        <li><router-link to="/vue-movie/search">Search</router-link></li>
       </ul>
       
     </nav>

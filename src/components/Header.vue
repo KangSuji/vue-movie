@@ -2,7 +2,7 @@
   <header>
     <div class="container">
         <div class="header-title">
-          <router-link to="/"> 
+          <router-link to="/vue-movie/"> 
             <span>OMDb API</span><br/>
           </router-link>
           THE OPEN<br/>

@@ -7,16 +7,16 @@ export default createRouter({
     history: createWebHistory(),
     routes: [
         {
-          path: '/',
+          path: '/vue-movie/',
           component: HomeView
         },
         { 
-          path: '/movie/:id', 
+          path: '/vue-movie/movie/:id', 
           component: MovieView,
           props: true,
         },
         { 
-          path: '/search', 
+          path: '/vue-movie/search', 
           name: 'search',
           component: SearchView,
           props: true,
