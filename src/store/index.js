@@ -33,7 +33,7 @@ export default createStore({
       fetch(payload.title, payload.page)
         .then( res => {
           context.commit('SET_MOVIE_TITLE', res.data)
-          })
+        })
         .catch( error => console.log(error))
     }
   }

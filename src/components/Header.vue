@@ -18,12 +18,6 @@
   </header>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
   .header-section{
     height: 300px; 

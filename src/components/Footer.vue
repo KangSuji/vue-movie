@@ -7,13 +7,6 @@
   </footer>
 </template>
 
-<script>
-
-export default {
-  
-}
-</script>
-
 <style scoped>
 footer {
   padding: 70px 0;

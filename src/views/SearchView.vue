@@ -65,6 +65,7 @@ export default {
       for(payload.page = 1; payload.page<=3; payload.page ++){
         this.$store.dispatch('FETCH_MOVIE_TITLE', payload);
       }
+      
     }
   }
 }
@@ -117,7 +118,7 @@ export default {
     color: #fff;
   }
   .movie-poster {
-    padding: 30px 0px 30px 48px;
+    padding: 30px 48px 30px 48px;
     display: flex;
     justify-content: center;
     align-items: center;
