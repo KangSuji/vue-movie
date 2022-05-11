@@ -83,8 +83,7 @@ export default {
     background-color: #F5F5F5;
   }
   .search-movie form {
-   
-    background-color: #F5F5F5;
+    background-color: none;
   }
   .input-form {
     margin: 30px 0;
@@ -117,7 +116,7 @@ export default {
   .movie-poster {
     padding: 30px 0px 30px 48px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap : wrap;
     
@@ -133,7 +132,6 @@ export default {
     margin-bottom: 10px;
   }
   .search-poster {
-    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -162,10 +160,18 @@ export default {
   .movie-title .title {
     color: #fff;
   }
-  @media (max-width: 460px) {
+  @media (max-width: 500px) {
     input[type="text"] {
-      width: 10%;
-      
-  }
+      width: 30%; 
+    }
+    .movie-poster-img img{
+      width: 100px;
+      height: calc(100px *3/2);
+    }
+    .movie-title {
+      width: 100px;
+      height: 50px;
+      font-size: 0.5rem;
+    }
   }
 </style>

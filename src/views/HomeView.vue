@@ -17,7 +17,7 @@
           <div>SUJIKANG</div>
           <div>010-9660-5987</div>
           <div>sukang0608@naver.com</div>
-          <a href="https://github.com/KangSuji" target="_blank" class="gogit">Go!Github</a>
+          <div><a href="https://github.com/KangSuji" target="_blank" class="gogit">Go!Github</a></div>
         </div>
       </div>
     </div>
@@ -50,6 +50,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-content: center;
+  
   
 }
 .section-title {
@@ -94,17 +95,18 @@ input[type="submit"]:hover {
   margin-bottom: 50px;
 }
 .contect-info {
-  width: 100%;
+  height: 300px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  align-items: center;
+  background-color: #F5F5F5;
 }
 .logo {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 10px solid #303030;
-  background-color: #c9c9c9;
+  border: 10px solid #4d4b4b;
 }
 .logo img {
   width: 200px;
@@ -117,17 +119,18 @@ input[type="submit"]:hover {
 
 }
 .gogit {
-  width: 100px;
-  border: 1px solid black;
+  padding: 3px 10px;
+  background-color: #c9c9c9;
+  color: #fff;
   border-radius: 50px;
   text-align: center;
   margin-top: 10px;
 }
 .gogit:hover {
-  background-color: #303030;
+  background-color: #4d4b4b;
   color: #fff;
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   input[type="text"] {
     width: 50%;
   }
@@ -142,6 +145,9 @@ input[type="submit"]:hover {
   }
   .contect-section {
     text-align: center;
+  }
+  .contect-info {
+    background-color: #fff; 
   }
 
 }
