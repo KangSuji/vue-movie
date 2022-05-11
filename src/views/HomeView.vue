@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     goSearch(title) {
-      this.$router.push({path:'/vue-movie/search', name:'search', params:{title}})
+      this.$router.push({path:'/search', name:'search', params:{title}})
     }
   }
 }
